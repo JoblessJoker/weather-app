@@ -16,7 +16,7 @@ const Home = () => {
 
     const handleSearch = useCallback(() => {
         dispatch(getCurrentWeatherDetails(city));
-    },[]);
+    }, [city, dispatch]);
 
     useEffect(() => {
         handleSearch();
