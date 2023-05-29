@@ -14,7 +14,7 @@ const Home = () => {
     const dispatch = useDispatch();
     const data = useSelector((state) => state.data);
 
-    useEffect(() => {
+    useEffect((handleSearch = handleSearch) => {
         handleSearch();
     }, []);
 
