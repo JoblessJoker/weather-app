@@ -14,13 +14,14 @@ const Home = () => {
     const dispatch = useDispatch();
     const data = useSelector((state) => state.data);
 
+    const handleSearch = () => {
+        dispatch(getCurrentWeatherDetails(city));
+    };
+    
     useEffect((handleSearch = handleSearch) => {
         handleSearch();
     }, []);
 
-    const handleSearch = () => {
-        dispatch(getCurrentWeatherDetails(city));
-    };
 
     return (
         <Container maxWidth="lg" sx={{ marginTop: '2rem', marginBottom: '2rem' }}>
