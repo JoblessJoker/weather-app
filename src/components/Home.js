@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { TextField, Button, Container, Grid, Typography, Card, CardContent, CircularProgress } from '@mui/material';
 import { getCurrentWeatherDetails } from '../store/actions/weatherActions';
@@ -14,11 +14,11 @@ const Home = () => {
     const dispatch = useDispatch();
     const data = useSelector((state) => state.data);
 
-    const handleSearch = () => {
+    const handleSearch = useCallback(() => {
         dispatch(getCurrentWeatherDetails(city));
-    };
-    
-    useEffect((handleSearch = handleSearch) => {
+    },[]);
+
+    useEffect(() => {
         handleSearch();
     }, []);
 
